@@ -1,0 +1,2 @@
+ALTER TABLE `project_data` ADD `project_id` text NOT NULL REFERENCES projects(id);--> statement-breakpoint
+ALTER TABLE `project_records` ALTER COLUMN "project_id" TO "project_id" text NOT NULL REFERENCES projects(id) ON DELETE no action ON UPDATE no action;
