@@ -1,0 +1,1 @@
+export { bugReports } from '../../../drizzle/schema'; 

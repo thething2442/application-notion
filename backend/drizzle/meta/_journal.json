@@ -22,6 +22,27 @@
       "when": 1750492118776,
       "tag": "0002_cynical_frightful_four",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1750545764314,
+      "tag": "0003_same_gideon",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1750546167562,
+      "tag": "0004_light_guardsmen",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1750546978627,
+      "tag": "0005_huge_klaw",
+      "breakpoints": true
     }
   ]
 }

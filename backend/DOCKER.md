@@ -4,8 +4,7 @@ This document explains how to run the NestJS backend using Docker.
 
 ## Prerequisites
 
-- Docker installed on your system
-- Docker Compose installed
+- Docker Desktop installed on your system
 - Environment variables configured (see `env.example`)
 
 ## Quick Start
@@ -14,29 +13,29 @@ This document explains how to run the NestJS backend using Docker.
 
 1. **Build and run the production container:**
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
 2. **Run in detached mode:**
    ```bash
-   docker-compose up -d --build
+   docker compose up -d --build
    ```
 
 3. **Stop the container:**
    ```bash
-   docker-compose down
+   docker compose down
    ```
 
 ### Development Build
 
 1. **Build and run the development container with hot reload:**
    ```bash
-   docker-compose -f docker-compose.dev.yml up --build
+   docker compose -f docker-compose.dev.yml up --build
    ```
 
 2. **Run in detached mode:**
    ```bash
-   docker-compose -f docker-compose.dev.yml up -d --build
+   docker compose -f docker-compose.dev.yml up -d --build
    ```
 
 ## Manual Docker Commands
@@ -58,7 +57,7 @@ docker run -p 4000:4000 --env-file .env backend
 docker build -f Dockerfile.dev -t backend-dev .
 
 # Run the development container
-docker run -p 4000:4000 -v $(pwd):/app --env-file .env backend-dev
+docker run -p 4000:4000 -v ${PWD}:/app --env-file .env backend-dev
 ```
 
 ## Environment Variables
@@ -83,7 +82,7 @@ JWT_SECRET=your_jwt_secret_here
 The production container includes a health check that will verify the application is running properly. You can check the health status with:
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 ## Logs
@@ -92,13 +91,13 @@ View container logs:
 
 ```bash
 # All services
-docker-compose logs
+docker compose logs
 
 # Specific service
-docker-compose logs backend
+docker compose logs backend
 
 # Follow logs in real-time
-docker-compose logs -f backend
+docker compose logs -f backend
 ```
 
 ## Troubleshooting
@@ -112,7 +111,7 @@ ports:
 ```
 
 ### Permission Issues
-If you encounter permission issues, you can run Docker commands with sudo (on Linux/Mac) or run Docker Desktop as administrator (on Windows).
+If you encounter permission issues, you can run Docker commands with administrator privileges (on Windows).
 
 ### Build Issues
 If you encounter build issues, try:
@@ -122,8 +121,11 @@ If you encounter build issues, try:
 docker system prune -a
 
 # Rebuild without cache
-docker-compose build --no-cache
+docker compose build --no-cache
 ```
+
+### Docker Compose Command Not Found
+If you get an error saying `docker-compose` is not recognized, use `docker compose` (with a space) instead. This is the newer syntax used by Docker Desktop.
 
 ## File Structure
 

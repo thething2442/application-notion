@@ -1,0 +1,1 @@
+export { dynamicContent } from '../../../drizzle/schema'; 

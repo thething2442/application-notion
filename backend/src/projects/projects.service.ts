@@ -4,7 +4,6 @@ import { projects, projectData, projectRecords, users } from '../../drizzle/sche
 import db from '../../db/db';
 import { eq, and, desc } from 'drizzle-orm';
 import { v4 as uuidv4 } from 'uuid';
-
 @Injectable()
 export class ProjectsService {
   // Project CRUD operations

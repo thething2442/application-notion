@@ -1,0 +1,20 @@
+CREATE TABLE `dynamic_content` (
+	`id` text PRIMARY KEY NOT NULL,
+	`title` text NOT NULL,
+	`description` text,
+	`type` text NOT NULL,
+	`content` text NOT NULL,
+	`status` text DEFAULT 'draft' NOT NULL,
+	`version` text,
+	`is_active` integer DEFAULT true,
+	`language` text DEFAULT 'en',
+	`tags` text,
+	`published_by` text,
+	`notes` text,
+	`created_by` text NOT NULL,
+	`created_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	`updated_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	`published_at` text,
+	FOREIGN KEY (`published_by`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action,
+	FOREIGN KEY (`created_by`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
+);

@@ -1,0 +1,23 @@
+CREATE TABLE `bug_reports` (
+	`id` text PRIMARY KEY NOT NULL,
+	`title` text NOT NULL,
+	`description` text NOT NULL,
+	`steps_to_reproduce` text,
+	`expected_behavior` text,
+	`actual_behavior` text,
+	`severity` text DEFAULT 'medium' NOT NULL,
+	`status` text DEFAULT 'open' NOT NULL,
+	`browser` text,
+	`operating_system` text,
+	`screenshot_url` text,
+	`tags` text,
+	`project_id` text,
+	`page_url` text,
+	`assigned_to` text,
+	`resolution` text,
+	`reported_by` text NOT NULL,
+	`created_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	`updated_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	`resolved_at` text,
+	FOREIGN KEY (`reported_by`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
+);
