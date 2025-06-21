@@ -54,12 +54,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Link href={isSignedIn ? `/${user?.id}/dashboard` : '/'}>
+            <Link href={isSignedIn ? '/dashboard' : '/'}>
               <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
             </Link>
-            <Link href={isSignedIn ? `/${user?.id}/dashboard` : '/'}>
+            <Link href={isSignedIn ? '/dashboard' : '/'}>
               <span className="text-xl font-bold text-gray-900">WorkSpace</span>
             </Link>
           </div>
@@ -67,11 +67,11 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             {isSignedIn ? (
               <>
-                <Link href={`/${user?.id}/dashboard`} className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
+                <Link href="/dashboard" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
                   <LayoutDashboard className="w-4 h-4" />
                   <span>Dashboard</span>
                 </Link>
-                <Link href={`/${user?.id}/projects`} className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
+                <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
                   <Folder className="w-4 h-4" />
                   <span>Projects</span>
                 </Link>
@@ -124,19 +124,19 @@ export default function Navbar() {
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href={`/${user?.id}/dashboard`}>
+                      <Link href="/dashboard">
                         <LayoutDashboard className="mr-2 h-4 w-4" />
                         <span>Dashboard</span>
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href={`/${user?.id}/projects`}>
+                      <Link href="/projects">
                         <Folder className="mr-2 h-4 w-4" />
                         <span>Projects</span>
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href={`/${user?.id}/settings`}>
+                      <Link href="/settings">
                         <Settings className="mr-2 h-4 w-4" />
                         <span>Settings</span>
                       </Link>
