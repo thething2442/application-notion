@@ -1,11 +1,14 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = "pk_test_placeholder"
   CLERK_SECRET_KEY = "sk_test_placeholder"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/*"
