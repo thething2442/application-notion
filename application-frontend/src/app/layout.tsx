@@ -41,9 +41,7 @@ export default function RootLayout({
       publishableKey={clerkPublishableKey}
       afterSignOutUrl="/"
       signInFallbackRedirectUrl={'/'}
-      signInForceRedirectUrl={'/dashboard'}
-      signUpForceRedirectUrl={'/dashboard'}
-      signUpFallbackRedirectUrl={'/dashboard'}
+    
     >
       <html lang="en">
         <body
