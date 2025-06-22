@@ -1,24 +1,16 @@
 "use client"
-
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+import {  Breadcrumb,  BreadcrumbItem,  BreadcrumbLink,  BreadcrumbList,  BreadcrumbPage,  BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, Plus } from "lucide-react"
-import { DashboardContent } from "../../../components/dashboard-content" // Import the new component
+import { DashboardContent } from "../../../components/dashboard-content"
 import { useUser } from "@clerk/nextjs"           
 export default function Dashboard() {
   const { user } = useUser()
-  console.log(user) // Log the user object to the console to see the data     
+  console.log(user)   
   return (
     <SidebarProvider>
       <AppSidebar />
