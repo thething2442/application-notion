@@ -23,21 +23,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  if (!clerkPublishableKey) {
+    return (
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {children}
+        </body>
+      </html>
+    );
+  }
+
   return (
-    <ClerkProvider afterSignOutUrl="/"
-    signInFallbackRedirectUrl={'/'}
-    signInForceRedirectUrl={'/dashboard'}
-    signUpForceRedirectUrl={'/dashboard'}
-    signUpFallbackRedirectUrl={'/dashboard'}
-    
+    <ClerkProvider 
+      publishableKey={clerkPublishableKey}
+      afterSignOutUrl="/"
+      signInFallbackRedirectUrl={'/'}
+      signInForceRedirectUrl={'/dashboard'}
+      signUpForceRedirectUrl={'/dashboard'}
+      signUpFallbackRedirectUrl={'/dashboard'}
     >
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
