@@ -24,8 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const isBuildTime = process.env.NODE_ENV === 'production' && !clerkPublishableKey;
 
-  if (!clerkPublishableKey) {
+  if (isBuildTime || !clerkPublishableKey) {
     return (
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
