@@ -67,7 +67,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             {isSignedIn ? (
               <>
-                <Link href="/dashboard" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
+                <Link href="/dashboard/main" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1">
                   <LayoutDashboard className="w-4 h-4" />
                   <span>Dashboard</span>
                 </Link>

@@ -1,5 +1,4 @@
 "use client"
-
 import type * as React from "react"
 import {
   BookOpen,
@@ -16,7 +15,7 @@ import {
   Archive,
   Trash2,
 } from "lucide-react"
-
+import { useComponentsAdder } from "@/components/components-adder"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
@@ -84,38 +83,13 @@ const data = {
       icon: LifeBuoy,
     },
   ],
-  projects: [
-    {
-      name: "Personal Notes",
-      url: "#",
-      icon: FileText,
-    },
-    {
-      name: "Work Projects",
-      url: "#",
-      icon: Folder,
-    },
-    {
-      name: "Meeting Notes",
-      url: "#",
-      icon: Users,
-    },
-    {
-      name: "Ideas & Brainstorming",
-      url: "#",
-      icon: Star,
-    },
-    {
-      name: "Knowledge Base",
-      url: "#",
-      icon: Database,
-    },
-  ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar() {
+  const {components,componentName,componentType,componentDescription,componentLink,componentIcon,isIconPickerDialogOpen,handleAddComponent,handleRemoveComponent} = useComponentsAdder()  
+  
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -125,7 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <BookOpen className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">WorkSpace</span>
+                  <span className="truncate font-semibold">Veridia</span>
                   <span className="truncate text-xs">Personal</span>
                 </div>
               </a>
@@ -134,9 +108,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+  
       </SidebarContent>
       <SidebarFooter>
         <NavUser />
