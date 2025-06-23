@@ -8,9 +8,9 @@ async function bootstrap() {
   // Enable CORS
   app.enableCors({
     origin: [
-      'application-notion-rtm4-git-main-jade-leonard-alvezs-projects.vercel.app',
-      'application-notion-rtm4.vercel.app',
-      'application-notion-rtm4-f95sv00bn-jade-leonard-alvezs-projects.vercel.app',
+      'https://application-notion-rtm4-git-main-jade-leonard-alvezs-projects.vercel.app',
+      'https://application-notion-rtm4.vercel.app',
+      'https://application-notion-rtm4-f95sv00bn-jade-leonard-alvezs-projects.vercel.app',
       'http://localhost:3000', // Frontend development server
       'http://localhost:3001', // Alternative frontend port
       'https://your-production-domain.com', // Add your production domain
@@ -23,7 +23,9 @@ async function bootstrap() {
       'Content-Type',
       'Accept',
       'Authorization',
-      'user-id', // Custom header for user identification
+      'user-id', // Custom header for user identification,
+      'id',
+      'user_id'
     ],
     credentials: true,
   });
