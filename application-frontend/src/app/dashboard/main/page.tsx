@@ -9,11 +9,9 @@ import { Search, Plus } from "lucide-react"
 import { DashboardContent } from "../../../components/dashboard-content"
 import { useUser } from "@clerk/nextjs"           
 export default function Dashboard() {
-  const { user } = useUser()
-  console.log(user)   
   return (
     <SidebarProvider>
-      <AppSidebar />
+    
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />

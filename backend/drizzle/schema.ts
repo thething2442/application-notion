@@ -9,8 +9,6 @@ export const users = sqliteTable("users", {
   plan: text("plan", { enum: ["free", "pro", "company"] }).default("free"),
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
-
-// Projects table to organize data
 export const projects = sqliteTable("projects", {
   id: text("id").primaryKey(),
   userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
